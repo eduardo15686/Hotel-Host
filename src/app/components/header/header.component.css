@@ -1,0 +1,9 @@
+.izquierda {
+    flex: 1 1 auto;
+  }
+  #titulo{
+    font-size: 30px;
+  }
+  .derecha button{
+    margin-right: 8px;
+  }

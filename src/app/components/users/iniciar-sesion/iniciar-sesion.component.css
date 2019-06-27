@@ -1,0 +1,19 @@
+#Login{
+  background-color: #E7F6F6;
+  border: 1px solid #99cccc;
+  align-items: center;
+  justify-content: center;
+}
+
+#aceptar{
+  background-color: rgb(122, 228, 122);
+  float: right;
+}
+
+#cancelar{
+  background-color: rgb(209, 88, 88);
+}
+
+.email{
+  padding-bottom: 15px;
+}

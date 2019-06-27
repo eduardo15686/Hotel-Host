@@ -1,0 +1,10 @@
+#estados{
+  margin: 10px auto;
+  width: 60%;
+  background-color: #E7F6F6;
+  border: 1px solid #99cccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 200px;
+}

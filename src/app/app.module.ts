@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {environment} from '../environments/environment';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireModule} from 'angularfire2';
+
+import{HotelHostService} from './services/hotel-host.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,11 +24,30 @@ import {
   MatGridListModule,
   MatMenuTrigger,
   MatSelectModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatIconModule
 } from '@angular/material';
+import { HeaderComponent } from './components/header/header.component';
+import { IniciarSesionComponent } from './components/users/iniciar-sesion/iniciar-sesion.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { RegistroComponent } from './components/users/registro/registro.component';
+
+
+
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { AuthComponent } from './services/auth/auth.component';
+import { DataApiComponent } from './services/data-api/data-api.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    IniciarSesionComponent,
+    InicioComponent,
+    RegistroComponent,
+    AuthComponent,
+    DataApiComponent
   ],
   imports: [
     AppRoutingModule,
@@ -49,10 +73,13 @@ import {
     MatSelectModule,
     MatMenuModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig,'Hotel-Host'),
+    AngularFirestoreModule
 
   ],
-  providers: [],
+  providers: [HotelHostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,31 @@
+<mat-card id="Login">
+  <h1>Iniciar Sesión</h1>
+  <form>
+    <div class="email">
+      <mat-form-field>
+        <input matInput placeholder="Correo Electronico" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getEmailError()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="password">
+      <mat-form-field>
+        <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+        <mat-error *ngIf="password.invalid">{{getPasswordError()}}</mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-card>
+<mat-card>
+    <div>
+      <button mat-button type="submit" (click)="cerrar()" id="cancelar">Cancelar</button>
+      <button mat-button (click)="aceptar()" id="aceptar">Aceptar</button>
+    </div>
+    <div>
+      <a href="/src/app/components/users/registro">Registrarse</a>
+    </div>
+</mat-card>
+
+
