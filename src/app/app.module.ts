@@ -37,6 +37,7 @@ import { RegistroComponent } from './components/users/registro/registro.componen
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AuthComponent } from './services/auth/auth.component';
 import { DataApiComponent } from './services/data-api/data-api.component';
+import { SubirHotelComponent } from './components/subir-hotel/subir-hotel.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { DataApiComponent } from './services/data-api/data-api.component';
     InicioComponent,
     RegistroComponent,
     AuthComponent,
-    DataApiComponent
+    DataApiComponent,
+    SubirHotelComponent
   ],
   imports: [
     AppRoutingModule,

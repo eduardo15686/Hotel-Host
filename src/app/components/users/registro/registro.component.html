@@ -1,5 +1,6 @@
 <mat-card id="Login">
     <h1>Registrarse</h1>
+    <!--tabla con 2 Input para poner nombre y apellido en la misma linea-->
     <form #formRegister="ngForm" (ngSubmit)="onRegister()">
       <table class="datos" cellspacing="0"><tr>
           <td><mat-form-field class="example-full-width">
@@ -11,13 +12,14 @@
         </tr>
       </table>
 
+      <!--Input para el correo electronico, este es obligatorio-->
       <div class="email">
         <mat-form-field>
           <input matInput placeholder="Correo Electronico" [formControl]="email" required>
           <mat-error *ngIf="email.invalid">{{getEmailError()}}</mat-error>
         </mat-form-field>
       </div>
-      
+      <!--tabla con 2 Input para contraseña y verificar contraseña en la misma linea-->
       <table class="password" cellspacing="30"><tr>
           <td><mat-form-field class="nombre">
               <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
@@ -35,6 +37,8 @@
           </mat-form-field></td>
         </tr>
       </table>
+
+      <!--Input para el nombre de usuario-->
       <div class="user">
           <mat-form-field>
             <input matInput placeholder="Nombre de Usuario" required>
@@ -43,6 +47,7 @@
     </form>
   </mat-card>
 
+  <!--Botones de aceptar y cancelar-->
   <mat-card>
     <div>
       <button mat-button type="submit" (click)="cerrar()" id="cancelar">Cancelar</button>

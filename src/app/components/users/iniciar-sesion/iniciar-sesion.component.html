@@ -1,5 +1,7 @@
 <mat-card id="Login">
   <h1>Iniciar Sesión</h1>
+
+  <!--Correo electronico-->
   <form>
     <div class="email">
       <mat-form-field>
@@ -7,6 +9,8 @@
         <mat-error *ngIf="email.invalid">{{getEmailError()}}</mat-error>
       </mat-form-field>
     </div>
+
+    <!--Contraseña-->
     <div class="password">
       <mat-form-field>
         <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
@@ -18,6 +22,8 @@
     </div>
   </form>
 </mat-card>
+
+<!--Botones-->
 <mat-card>
     <div>
       <button mat-button type="submit" (click)="cerrar()" id="cancelar">Cancelar</button>
