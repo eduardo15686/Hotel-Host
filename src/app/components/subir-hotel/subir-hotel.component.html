@@ -1,20 +1,77 @@
-<section id="registro">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-        <div class="card_register">
-          <div class="card">
-            <div class="card-body text-center">
-              <form action="">
-                <h1 class="h3 mb-3 font-weight-normal">Registro de hotel</h1>
-                <div class="form-group">
-                  <input type="text" id="" name="" class="form-control">
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+<mat-card id="hoteles">
+  <h1>Registrar hotel</h1>
+
+  <!--Nombre del hotel-->
+
+ <form class="example-form">
+      <table class="datos" cellspacing="0"><tr>
+         <td>  <div class="nombrehotel" id="nombre">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre del hotel" [formControl]="nombrehotel" required>
+      </mat-form-field>
     </div>
+    <mat-divider></mat-divider>
+  
+
+ <!--Ciudad y estado-->
+ 
+ <table class="datos" cellspacing="0"><tr>
+  <td><mat-form-field class="example-full-width">
+    <input matInput placeholder="Ciudad" (ngModel)="user.name" required>
+  </mat-form-field></td>
+  <td><mat-form-field class="example-full-width">
+    <input matInput placeholder="Estado" required>
+  </mat-form-field></td>
+</tr>
+</table>
+<mat-divider></mat-divider>
+
+
+<!--Ubicacion-->
+  <div class="ubicacion">
+    <mat-form-field>
+      <input matInput placeholder="Ubicacion" [formControl]="ubicacion" required>
+    </mat-form-field>
   </div>
-</section>
+
+  <!--Tipo de haitacion y precio por noche-->
+ <table class="datos" cellspacing="0"><tr>
+  <mat-form-field id="tipo">
+    <mat-label>Tipo de habitacion</mat-label>
+    <select matNativeControl required>
+      <option value="Normal">Normal</option>
+      <option value="Deluxe">Deluxe</option>
+    </select>
+  </mat-form-field>
+  
+  <mat-form-field id="precio">
+    <input matInput placeholder="Precio por noche" type="number" class="example-right-align">
+    <span matPrefix>$&nbsp;</span>
+    <span matSuffix>.00</span>
+  </mat-form-field>
+</tr>
+</table>
+<mat-divider></mat-divider>
+
+
+<!--Descripcion-->
+<mat-form-field class="example-full-width" >
+  <textarea matInput placeholder="Descripcion" ></textarea>
+</mat-form-field>
+<mat-divider></mat-divider>
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+
+<!--Botones-->
+<mat-card>
+    <div>
+      <button mat-button type="submit" (click)="cerrar()" id="cancelar">Cancelar</button>
+      <button mat-button (click)="aceptar()" id="aceptar">Guardar</button>
+    </div>
+</mat-card>
+</form>
