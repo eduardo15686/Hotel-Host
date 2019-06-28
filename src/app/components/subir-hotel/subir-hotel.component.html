@@ -3,34 +3,35 @@
 
   <!--Nombre del hotel-->
 
- <form class="example-form">
+ <form (ngSubmit)="onGuardarHotel(formNew)" #formNew="ngForm" class="subir-hoteles">
       <table class="datos" cellspacing="0"><tr>
-         <td>  <div class="nombrehotel" id="nombre">
+         <td>  
+    <div class="nombrehotel" id="nombre">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Nombre del hotel" [formControl]="nombrehotel" required>
+        <input [(ngModel)]="hotel.nombre_hotel" name="nombre_hotel" #nombreHotel="ngModel" matInput placeholder="Nombre del hotel" required>
       </mat-form-field>
     </div>
-    <mat-divider></mat-divider>
+
   
 
  <!--Ciudad y estado-->
  
  <table class="datos" cellspacing="0"><tr>
   <td><mat-form-field class="example-full-width">
-    <input matInput placeholder="Ciudad" (ngModel)="user.name" required>
+    <input [(ngModel)]="hotel.ciudad" name ="ciudad" #ciudad="ngModel" matInput placeholder="Ciudad" required>
   </mat-form-field></td>
   <td><mat-form-field class="example-full-width">
-    <input matInput placeholder="Estado" required>
+    <input [(ngModel)]="hotel.estado" name ="estado" #estado="ngModel" matInput placeholder="Estado" required>
   </mat-form-field></td>
 </tr>
 </table>
-<mat-divider></mat-divider>
+
 
 
 <!--Ubicacion-->
   <div class="ubicacion">
     <mat-form-field>
-      <input matInput placeholder="Ubicacion" [formControl]="ubicacion" required>
+      <input [(ngModel)]="hotel.ubicacion" name="ubicacion" #ubicacion="ngModel" matInput placeholder="Ubicacion" required>
     </mat-form-field>
   </div>
 
@@ -45,20 +46,19 @@
   </mat-form-field>
   
   <mat-form-field id="precio">
-    <input matInput placeholder="Precio por noche" type="number" class="example-right-align">
+    <input [(ngModel)]="hotel.precio" name="precio" #precio="ngModel"matInput placeholder="Precio por noche" type="number" class="example-right-align">
     <span matPrefix>$&nbsp;</span>
     <span matSuffix>.00</span>
   </mat-form-field>
 </tr>
 </table>
-<mat-divider></mat-divider>
+
 
 
 <!--Descripcion-->
 <mat-form-field class="example-full-width" >
-  <textarea matInput placeholder="Descripcion" ></textarea>
+  <textarea [(ngModel)]="hotel.descripcion" name="descripcion" #descripcion="ngModel" matInput placeholder="Descripcion" ></textarea>
 </mat-form-field>
-<mat-divider></mat-divider>
 </td>
 <td>
 
@@ -66,12 +66,12 @@
 </tr>
 </table>
 
-
 <!--Botones-->
 <mat-card>
     <div>
-      <button mat-button type="submit" (click)="cerrar()" id="cancelar">Cancelar</button>
-      <button mat-button (click)="aceptar()" id="aceptar">Guardar</button>
+      <button mat-button (click)="cerrar()" id="cancelar">Cancelar</button>
+      <button type="submit" mat-button id="aceptar">Guardar</button>
     </div>
 </mat-card>
 </form>
+</mat-card>

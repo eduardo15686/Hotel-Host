@@ -4,13 +4,15 @@ import { IniciarSesionComponent } from './components/users/iniciar-sesion/inicia
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RegistroComponent } from './components/users/registro/registro.component';
 import { SubirHotelComponent } from './components/subir-hotel/subir-hotel.component';
+import { PrincipalComponent } from './components/principal/principal.component';
 
 
 const routes: Routes = [
   {path: 'inicio', component: IniciarSesionComponent},
   {path: '', component: InicioComponent},
   {path: 'registro', component: RegistroComponent},
-  {path: 'subir-hotel', component: SubirHotelComponent}
+  {path: 'subir-hotel', component: SubirHotelComponent},
+  {path: 'principal', component: PrincipalComponent}
 ];
 
 

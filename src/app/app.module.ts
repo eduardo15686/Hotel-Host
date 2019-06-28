@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireModule} from 'angularfire2';
+import {FormsModule} from '@angular/forms';
 
 import{HotelHostService} from './services/hotel-host.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -38,6 +39,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AuthComponent } from './services/auth/auth.component';
 import { DataApiComponent } from './services/data-api/data-api.component';
 import { SubirHotelComponent } from './components/subir-hotel/subir-hotel.component';
+import { PrincipalComponent } from './components/principal/principal.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -49,7 +52,9 @@ import { SubirHotelComponent } from './components/subir-hotel/subir-hotel.compon
     RegistroComponent,
     AuthComponent,
     DataApiComponent,
-    SubirHotelComponent
+    SubirHotelComponent,
+    PrincipalComponent,
+    FooterComponent
   ],
   imports: [
     AppRoutingModule,
