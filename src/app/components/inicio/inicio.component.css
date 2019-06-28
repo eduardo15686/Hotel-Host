@@ -1,10 +1,19 @@
 #estados{
   margin: 10px auto;
   width: 60%;
-  background-color: #E7F6F6;
+  background-color: rgb(255, 255, 255);
   border: 1px solid #99cccc;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 200px;
+  top: 80px;
+}
+#filtro_estado{
+  width: 600px;
+}
+h1{
+  font-style: bold;
+  color: #99cccc;
+  text-align: center;
+  font-size: 80px;
 }

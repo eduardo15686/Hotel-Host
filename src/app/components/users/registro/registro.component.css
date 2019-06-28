@@ -4,3 +4,11 @@
 #password{
     padding-right: 40px;
 }
+#aceptar{
+    background-color: rgb(50, 165, 50);
+    float: right;
+  }
+  
+  #cancelar{
+    background-color: rgb(207, 60, 60);
+  }
