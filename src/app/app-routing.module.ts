@@ -3,14 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { IniciarSesionComponent } from './components/users/iniciar-sesion/iniciar-sesion.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RegistroComponent } from './components/users/registro/registro.component';
+import { SubirHotelComponent } from './components/subir-hotel/subir-hotel.component';
 
 
 const routes: Routes = [
   {path: 'inicio', component: IniciarSesionComponent},
   {path: '', component: InicioComponent},
-  {path: 'registro', component: RegistroComponent}
-
-  
+  {path: 'registro', component: RegistroComponent},
+  {path: 'subir-hotel', component: SubirHotelComponent}
 ];
 
 
