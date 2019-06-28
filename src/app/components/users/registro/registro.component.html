@@ -3,7 +3,7 @@
     <!--tabla con 2 Input para poner nombre y apellido en la misma linea-->
     <form #formRegister="ngForm" (ngSubmit)="onRegister()">
       <table class="datos" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width">
+          <td><mat-form-field id="nombre">
             <input matInput placeholder="Nombre" (ngModel)="user.name" required>
           </mat-form-field></td>
           <td><mat-form-field class="example-full-width">
@@ -19,16 +19,17 @@
           <mat-error *ngIf="email.invalid">{{getEmailError()}}</mat-error>
         </mat-form-field>
       </div>
+
       <!--tabla con 2 Input para contraseña y verificar contraseña en la misma linea-->
-      <table class="password" cellspacing="30"><tr>
-          <td><mat-form-field class="nombre">
+      <table class="password" cellspacing="0"><tr>
+          <td><mat-form-field id="password">
               <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
               <mat-error *ngIf="password.invalid">{{getPasswordError()}}</mat-error>
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
           </mat-form-field></td>
-          <td><mat-form-field class="paterno">
+          <td><mat-form-field>
               <input matInput placeholder="Confirmar Contraseña" [type]="hide ? 'password2' : 'text'" [formControl]="password2" required>
               <mat-error *ngIf="password2.invalid">{{getPasswordError2()}}</mat-error>
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password2'" [attr.aria-pressed]="hide">
