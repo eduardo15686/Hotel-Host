@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from 'angularfire2/firestore';
-import {UserInterface} from '../models/usersInterface';
 import {HotelInterface} from '../models/hotelInterface';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';

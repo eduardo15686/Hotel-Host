@@ -1,8 +1,10 @@
 export interface UserInterface{
     id?: string;
+    nombre?: string;
     apellido?: string;
-    email?: string;
+    correo?: string;
+    usuario?: string;
     telefono?: string;
-    contraseña?: string;
-    user_type?: string;
+    contrasena?: string;
+    tipo_usuario?: string;
 }

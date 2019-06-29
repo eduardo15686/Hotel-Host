@@ -2,6 +2,10 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { IniciarSesionComponent } from '../iniciar-sesion/iniciar-sesion.component';
+import{UsersService} from "../../../services/users.service";
+import {UserInterface} from "../../../models/usersInterface";
+import { NgForm} from "@angular/forms/";
+
 
 @Component({
   selector: 'app-registro',
@@ -9,9 +13,17 @@ import { IniciarSesionComponent } from '../iniciar-sesion/iniciar-sesion.compone
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
+  user: UserInterface = {
+  nombre: '',
+  apellido: '',
+  correo: '',
+  usuario: '',
+  telefono: '',
+  contrasena: '',
+  tipo_usuario: ''
+};
   dialog: any;
-
-  constructor(public dialogRef: MatDialogRef<RegistroComponent>,
+  constructor(public dialogRef: MatDialogRef<RegistroComponent>,private userService: UsersService,
     @Inject(MAT_DIALOG_DATA)public data: any) { }
 
 
@@ -54,6 +66,10 @@ export class RegistroComponent implements OnInit {
       width: '400px'
     });
     this.dialogRef.close();
+  }
+
+  onNuevoUsuario(myForm: NgForm){
+    this.userService.addUser(this.user);
   }
 }
 

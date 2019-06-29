@@ -1,25 +1,31 @@
 <div *ngIf="hotels?.length > 0; else noHotels">
   <ul *ngFor="let hotel of hotels" class="collection">
     <li class="collection-item">
+      <div id="cuadro">
         <h5>Nombre del Hotel</h5>
-      <strong>{{hotel.nombre_hotel}}</strong>
-      
+      <blockquote>{{hotel.nombre_hotel}}</blockquote>
+    
       <h5>ciudad</h5>
       <blockquote>{{hotel.ciudad}}</blockquote>
-     
+  
       <h5>estado</h5>
       <blockquote>{{hotel.estado}}</blockquote>
+   
       
       <h5>ubicacion</h5>
       <blockquote>{{hotel.ubicacion}}</blockquote>
       
       <h5>precio por noche</h5>
       <blockquote>${{hotel.precio}}</blockquote>
-
+    </div>
+    <div id="descripcion">
       <h5>descripcion</h5>
       <blockquote>{{hotel.descripcion}}</blockquote>
-      <hr>
       <div class="container-updateHotel"></div>
+      <div>
+          <button type="submit" mat-button id="reservar">Reservar</button>
+      </div>  
+    </div>    
     </li>
   </ul>
 </div>

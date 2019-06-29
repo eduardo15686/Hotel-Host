@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HotelHostService} from "../../services/hotel-host.service"
+import { HotelHostService} from "../../services/hotel-host.service";
 import { HotelInterface} from "../../models/hotelInterface";
 import { NgForm} from "@angular/forms/";
 

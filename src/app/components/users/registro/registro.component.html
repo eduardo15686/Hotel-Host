@@ -1,29 +1,32 @@
-<mat-card id="Login">
+<mat-card id="registro">
     <h1>Registrarse</h1>
     <!--tabla con 2 Input para poner nombre y apellido en la misma linea-->
-    <form #formRegister="ngForm" (ngSubmit)="onRegister()">
+    <form (ngSubmit)="onNuevoUsuario(formNew)" #formNew="ngForm" class="nuevo-usuario">
       <table class="datos" cellspacing="0"><tr>
           <td><mat-form-field id="nombre">
-            <input matInput placeholder="Nombre" (ngModel)="user.name" required>
+            <input [(ngModel)]="user.nombre" name ="nombre" #nombre="ngModel" matInput placeholder="Nombre" required>
           </mat-form-field></td>
           <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="Apellido Paterno" required>
+            <input [(ngModel)]="user.apellido" name ="apellido" #apellido="ngModel" matInput placeholder="Apellido Paterno" required>
           </mat-form-field></td>
         </tr>
       </table>
 
       <!--Input para el correo electronico, este es obligatorio-->
-      <div class="email">
-        <mat-form-field>
-          <input matInput placeholder="Correo Electronico" [formControl]="email" required>
+      <table class="datos" cellspacing="0"><tr>
+        <td><mat-form-field>
+          <input [(ngModel)]="user.correo" name ="correo" #correo="ngModel" matInput placeholder="Correo Electronico" required>
           <mat-error *ngIf="email.invalid">{{getEmailError()}}</mat-error>
-        </mat-form-field>
-      </div>
-
+        </mat-form-field></td>
+        <td><mat-form-field>
+            <input [(ngModel)]="user.telefono" name ="telefono" #telefono="ngModel" matInput placeholder="Telefono">
+          </mat-form-field></td>
+    </tr>
+    </table>
       <!--tabla con 2 Input para contraseña y verificar contraseña en la misma linea-->
       <table class="password" cellspacing="0"><tr>
           <td><mat-form-field id="password">
-              <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+              <input [(ngModel)]="user.contrasena" name ="contrasena" #email="ngModel" matInput placeholder="Contrasena" [type]="hide ? 'password' : 'text'" required>
               <mat-error *ngIf="password.invalid">{{getPasswordError()}}</mat-error>
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -42,18 +45,21 @@
       <!--Input para el nombre de usuario-->
       <div class="user">
           <mat-form-field>
-            <input matInput placeholder="Nombre de Usuario" required>
+            <input [(ngModel)]="user.usuario" name ="usuario" #usuario="ngModel"matInput placeholder="Nombre de Usuario" required>
           </mat-form-field>
         </div>
+        
+  <!--Botones de aceptar y cancelar-->
+        <div>
+            
+            <button type="submit" mat-button (click)="aceptar()" id="aceptar">Aceptar</button>
+          </div>
     </form>
+    <button mat-button (click)="cerrar()" id="cancelar">Cancelar</button>
   </mat-card>
 
-  <!--Botones de aceptar y cancelar-->
   <mat-card>
-    <div>
-      <button mat-button type="submit" (click)="cerrar()" id="cancelar">Cancelar</button>
-      <button mat-button (click)="aceptar()" id="aceptar">Aceptar</button>
-    </div>
+      
     <br>
     <mat-divider></mat-divider>
     <div>
