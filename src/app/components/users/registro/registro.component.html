@@ -33,9 +33,9 @@
               </button>
           </mat-form-field></td>
           <td><mat-form-field>
-              <input matInput placeholder="Confirmar Contraseña" [type]="hide ? 'password2' : 'text'" [formControl]="password2" required>
-              <mat-error *ngIf="password2.invalid">{{getPasswordError2()}}</mat-error>
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password2'" [attr.aria-pressed]="hide">
+              <input matInput placeholder="Confirmar Contraseña" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+              <mat-error *ngIf="password.invalid">{{getPasswordError()}}</mat-error>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
           </mat-form-field></td>
@@ -49,16 +49,15 @@
           </mat-form-field>
         </div>
         
-  <!--Botones de aceptar y cancelar-->
+   <!--Botones de aceptar y cancelar-->
         <div>
-            
             <button type="submit" mat-button (click)="aceptar()" id="aceptar">Aceptar</button>
           </div>
     </form>
     <button mat-button (click)="cerrar()" id="cancelar">Cancelar</button>
-  </mat-card>
+   </mat-card>
 
-  <mat-card>
+   <mat-card>
       
     <br>
     <mat-divider></mat-divider>

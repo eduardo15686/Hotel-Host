@@ -45,11 +45,7 @@ export class RegistroComponent implements OnInit {
             '';
   }
 
-  password2 = new FormControl('', [Validators.required]);
-  getPasswordError2() {
-    return this.password.hasError('required') ? 'Contraseña obligatoria' :
-            '';
-  }
+
   
 
   //Funciones de los botones para cerrar o aceptar en la ventana modal
