@@ -14,6 +14,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 import {
   MatButtonModule,
   MatCardModule,
@@ -83,7 +84,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MatNativeDateModule,
     MatIconModule,
     AngularFireModule.initializeApp(environment.firebaseConfig,'Hotel-Host'),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
 
   ],
   providers: [HotelHostService],

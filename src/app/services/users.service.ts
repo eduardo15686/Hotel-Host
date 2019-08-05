@@ -3,6 +3,7 @@ import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} fr
 import {UserInterface} from '../models/usersInterface';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import { HAMMER_LOADER } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,9 @@ export class UsersService {
     );
   }
   addUser(user: UserInterface){
-    console.log("Nuevo hotel");
+    console.log("Nuevo usuario");
     this.usersCollection.add(user);
+    
   }
 
 }

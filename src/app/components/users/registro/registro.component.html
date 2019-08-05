@@ -26,14 +26,14 @@
       <!--tabla con 2 Input para contraseña y verificar contraseña en la misma linea-->
       <table class="password" cellspacing="0"><tr>
           <td><mat-form-field id="password">
-              <input [(ngModel)]="user.contrasena" name ="contrasena" #email="ngModel" matInput placeholder="Contrasena" [type]="hide ? 'password' : 'text'" required>
+              <input id = "contrasena" name ="contrasena" [(ngModel)]="user.contrasena"  #email="ngModel" matInput placeholder="Contrasena" [type]="hide ? 'password' : 'text'" required>
               <mat-error *ngIf="password.invalid">{{getPasswordError()}}</mat-error>
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
           </mat-form-field></td>
           <td><mat-form-field>
-              <input matInput placeholder="Confirmar Contraseña" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+              <input id = "confirmar" name ="confirmar" matInput placeholder="Confirmar Contraseña" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
               <mat-error *ngIf="password.invalid">{{getPasswordError()}}</mat-error>
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -41,18 +41,24 @@
           </mat-form-field></td>
         </tr>
       </table>
-
+    
       <!--Input para el nombre de usuario-->
       <div class="user">
           <mat-form-field>
             <input [(ngModel)]="user.usuario" name ="usuario" #usuario="ngModel"matInput placeholder="Nombre de Usuario" required>
           </mat-form-field>
         </div>
-        
+
+        <!--SUBIR IMAGENES-->
+        <div>
+            <h5>seleccionar imagen</h5>
+            <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+          </div>
+          <input id="imageUser" type="hidden" [value]="urlImage | async">
    <!--Botones de aceptar y cancelar-->
         <div>
-            <button type="submit" mat-button (click)="aceptar()" id="aceptar">Aceptar</button>
-          </div>
+          <button type="submit" mat-button (click)="aceptar()" id="aceptar">Aceptar</button>
+        </div>
     </form>
     <button mat-button (click)="cerrar()" id="cancelar">Cancelar</button>
    </mat-card>
